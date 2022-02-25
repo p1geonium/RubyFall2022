@@ -12,5 +12,8 @@
   
   <div className = "getting-started">
     <h2>Getting Started</h2>
+    <h4>Installing Ruby<h4>
+    For Windows:
+      <a href="https://rubyinstaller.org/">Ruby Intaller</a>
   </div>
 </body>
