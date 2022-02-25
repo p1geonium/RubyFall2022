@@ -28,4 +28,9 @@
 ![image](https://user-images.githubusercontent.com/93970330/155695686-bdc82f5a-8378-4ffd-a089-d76e2e44089e.png)
 <h4>3. Run the Ruby program by right click into the editor field and select "Run Code" or press "Ctrl+Alt+N" on Windows</h4>
 ![image](https://user-images.githubusercontent.com/93970330/155697063-b790ba5f-ccea-4c83-beac-24940641395e.png)
+<br>
+<h4>♦ Write Comment in Ruby</h4>
+<h4>1. The inline (single line) comment of Ruby is denote by the character "#". Everything written after this character are ignored in the execution.</h4>
+<h4>2. The multi-line comment of Ruby is denote with the pair "=begin" and "=end". Everything written between these tokens are ignored in the execution</h4>
+<h4></h4>
 </body>
