@@ -1,3 +1,4 @@
+<body>
 <h1>PLP1-History and Hello World</h1>
 ![image](https://user-images.githubusercontent.com/93970330/155486631-e729d922-be9f-4c6c-81bd-c1d976ac1d2d.png)
 <h2>Description of Ruby Programming Language</h2>
@@ -22,6 +23,9 @@
 <h4>✅ 2nd VSCode extension - "VSCode Ruby" (language support):<a href="https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby">VSCode Ruby Extension</a></h4>
 <br>
 <h4>♦ Run Ruby Program in VS Code</h4>
-<h4>1. A Ruby file should have extension ".arb" after its name</h4>
-<h4>2. The Language Mode in VS Code should be changed into Ruby</h4>
+<h4>1. A Ruby file should have extension ".arb" after its name.</h4>
+<h4>2. The Language Mode in VS Code should be changed into "Ruby" at bottom right corner.</h4>
 ![image](https://user-images.githubusercontent.com/93970330/155695686-bdc82f5a-8378-4ffd-a089-d76e2e44089e.png)
+<h4>3. Run the Ruby program by right click into the editor field and select "Run Code" or press "Ctrl+Alt+N" on Windows</h4>
+![image](https://user-images.githubusercontent.com/93970330/155697063-b790ba5f-ccea-4c83-beac-24940641395e.png)
+</body>
