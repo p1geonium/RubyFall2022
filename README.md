@@ -9,7 +9,7 @@
     <h4>Ruby was publicly realeased in 1995 by its creator Yukihiro “Matz” Matsumoto with the aim to provide a balanced functional programming with imperative programming.</h4>
     <h4>It is used for building destop applications, static websites, data processing services, and even automaton tools. In addition, it is also used for web servers, DevOps, and web scraping and crawling.</h4>
   </div>
-  
+  <br><br>
   <div className = "getting-started">
     <h2>Getting Started</h2>
     <h4>♦ Installing Ruby<h4>
@@ -19,7 +19,10 @@
     <h4>For other OS:
       <a/ href="https://www.ruby-lang.org/vi/documentation/installation/">Ruby Intallation through Third Party's tool</a>
     </h4>
+    <br>
     <h4>♦ Setup Ruby on Recommended IDE<h4>
+      <h4>Ruby does not come with a specific recommended IDE, so we recommend using Visual Studio Code - a source-code editor made by Microsoft for Windows, Linux and macOS.</h4>
+      <h4>Read more about this IDE <a href="https://code.visualstudio.com/docs">here!</a></h4>
     <h4>✅ Visual Studio Code Installation:
       <a href="https://code.visualstudio.com/download">Download VSCode</a></h4>
     <h4>✅ 1st VSCode extension - "Ruby" (language support and debugging):
