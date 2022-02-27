@@ -32,5 +32,9 @@
 <h4>♦ Write Comment in Ruby</h4>
 <h4>1. The inline (single line) comment of Ruby is denote by the character "#". Everything written after this character are ignored in the execution.</h4>
 <h4>2. The multi-line comment of Ruby is denote with the pair "=begin" and "=end". Everything written between these tokens are ignored in the execution</h4>
-<h4></h4>
+<br><br>
+<h2>Resources</h2>
+  <h4>Ruby: https://www.ruby-lang.org/vi/</h4>
+  <h4>Ruby and Ruby on Rails: https://acloudguru.com/blog/engineering/what-is-the-ruby-programming-language</h4>
+  <h4>Ruby programming course (4 hours) by freeCodeCamp: https://www.youtube.com/watch?v=t_ispmWmdjY</h4>
 </body>
