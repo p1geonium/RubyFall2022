@@ -11,7 +11,7 @@
 <h4>For Windows:
 <a href="https://rubyinstaller.org/">Ruby Intaller</a>
 </h4>
-<h4>For other OS:<a/ href="https://www.ruby-lang.org/vi/documentation/installation/">Ruby Intallation through Third Party's tool</a></h4>
+<h4>For other OS: <a/ href="https://www.ruby-lang.org/vi/documentation/installation/">Ruby Intallation through Third Party's tool</a></h4>
 <br>
 <h4>♦ Setup Ruby on Recommended IDE<h4>
 <h4>Ruby does not come with a specific recommended IDE, so we suggest using Visual Studio Code - a source-code editor made by Microsoft for Windows, Linux and macOS.</h4>
