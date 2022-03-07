@@ -81,7 +81,9 @@ The reserved words/keywords could not be used for naming identifiers.
 <h2>Resources</h2>
 
 Ruby data types: https://www.geeksforgeeks.org/ruby-data-types/
+
 Ruby style guide: https://github.com/rubocop/ruby-style-guide
+
 Ruby typing: https://blog.heroku.com/static-typing-ruby-with-sorbet
 
   
