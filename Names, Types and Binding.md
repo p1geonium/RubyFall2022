@@ -35,6 +35,7 @@ There are (at least) 6 data types in Ruby: Numbers, Boolean, Strings, Hashes, Ar
 - Example:
   
   hello = "Hello, world!"
+  
   puts hello
   
 **Hash** is the data type that assign its values to its key with the operation [=>]. The key pairs is separated with a comma between them and all the pairs are enclosed within curly braces. A Hash could be considered similar to Python Dictionary.
@@ -61,9 +62,13 @@ There are (at least) 6 data types in Ruby: Numbers, Boolean, Strings, Hashes, Ar
 There is not any official naming convention for Ruby. The following rules were mainly developed by the developer community.
 
 - Identifiers should be named with English.
+
 - Identifiers do not start with a number.
+
 - Use CapitalCase for naming identifier of Class and Module, which means that use capital letter for every first characters of the words and do not include underscores among words (GuitarHero, HelloWorld,...)
+
 - Use SnakeCase for naming Symbols, Methods, Variables, Files Name, and Directory, which means that use lower case letters at every position and include underscores among words and numbers (hello_world.rb, hello_world(), mil_nare, int_ball_1,...)
+
 - Use ScreamingSnakeCase for naming Constants, which means that use SnakeCase with all captial letters.
 
 <h2>3. Reserved words/keywords in Ruby</h2>
@@ -75,7 +80,9 @@ The reserved words/keywords could not be used for naming identifiers.
 <h2>4. Discussion</h2>
 
 - Ruby is a dynamic language, which means that the lines of codes are checked in the run time.
+
 - Ruby is strongly typed, which means that typing errors are checked/reported at run time.
+
 - Ruby allows both explicitly and implicitly typed.
 
 <h2>Resources</h2>
