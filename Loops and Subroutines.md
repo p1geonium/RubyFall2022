@@ -1,4 +1,7 @@
 <h1>Loops and Subroutines</h1>
+
+The demo codes could be found in the same GitHub repo as this file: https://github.com/p1geonium/RubySpring2022
+
 <h2>1. Loops in Ruby</h2>
 
 a) **while** Loop
@@ -48,6 +51,25 @@ With parameters:
 
 - **RULE**: A method must be defined **before calling** and the name of the method should be in lowercase. Methods are simply called by its name.
 
-<h2>3. </h2>
+<h2>3. return statement and Recursion</h2>
+
+a) **return** statement.
+- **return** statement is placed inside a function to returns one or more values, which are always objects.
+- To return multiple values at the same time, the variables/values returned are seperated by a comma ("***,***"). For example: return value1, value2, value3.
+- The returned values will become an array of values when assigned to a single variable.
+
+b) Recursion in Ruby
+- Ruby does support recursion method.
+
+<h2>4. Pass-by-value/reference</h2>
+- Ruby is a pass-by-value programming language, but the value it passes are references so that the function and caller reference to the same object in the memory through different variables.
+
 <h2>Resource</h2>
+
 Ruby's Loops: https://www.geeksforgeeks.org/ruby-loops-for-while-do-while-until/
+
+Ruby's Methods: https://www.geeksforgeeks.org/ruby-methods/?ref=lbp
+
+Recursion in Ruby: https://www.geeksforgeeks.org/recursion-in-ruby/
+
+Is Ruby pass-by-value or pass-by-reference: https://robertheaton.com/2014/07/22/is-ruby-pass-by-reference-or-pass-by-value/
