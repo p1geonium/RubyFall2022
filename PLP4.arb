@@ -1,0 +1,86 @@
+#while
+x=5
+while x>0 do
+    puts("Hello World")
+    x = x - 1
+end
+
+#dowhile
+loop do
+    puts "Hello World!"
+
+    z = 1
+    z = z-1
+    if z==0
+        break
+    end
+end
+
+#for
+y = "Hello"
+for i in 0..(y.length-1) do
+    puts y[i]
+end
+
+#foreach
+for i in ["a","b","c","d","e"] do
+    puts i
+end
+
+#Method that multiply 2 input numbers and returns the result.
+def multiply(x,y)
+    return x*y
+end
+a = 2
+b = 5
+puts multiply(a,b)
+
+#Recursive function
+def mcCarthy91(x)
+    if x>100
+        return x-10
+    end
+
+    return mcCarthy91(mcCarthy91(x+11))
+end
+
+puts mcCarthy91(110)
+puts mcCarthy91(21)
+puts mcCarthy91(45)
+
+#Function that splits a String into 2 Strings
+def splits(str)
+    unless str.is_a?(String) then
+        puts "The input variable was not a String!"
+        return 
+    end
+
+    new1 = ""
+    new2 = ""
+    for i in 0..(str.length/2-1) do
+        new1+=str[i]
+        new2+=str[str.length/2-1+i]
+    end
+
+    return new1,new2
+end
+
+duel = splits("Hello World!")
+puts duel
+
+#Check if Ruby is pass-by-value or pass-by-reference
+a = 10
+def checkVR(x)
+    x+= 10
+    return x
+end
+checkVR(a)
+puts a #a stays intacted
+
+b = ["a","b"]
+def checkVR2(y)
+    y.append("c")
+    return y
+end
+checkVR2(b)
+puts b #b is modified
