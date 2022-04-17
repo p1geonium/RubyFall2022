@@ -31,6 +31,7 @@ d) Member Methods inside Class
 
 ![image](https://user-images.githubusercontent.com/93970330/163705855-a62bf2d6-9c88-4810-9202-67d47dbc1128.png)
 
+- The Objects and Classes in Ruby do have standard build-in methods such as *to_a*, *to_i*, and *to_s* to convert the type of objects and serve some other purposes. The complete list of build-in classes and objects could be found here: http://phrogz.net/programmingruby/builtins.html
 
 <h2>2. Inheritance in Ruby</h2>
 
