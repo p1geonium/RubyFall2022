@@ -27,7 +27,8 @@ d) Member Methods inside Class
 
 - There could be methods defined inside a Class, which could be used to modify class variables, return variables value, or some other purposes. 
 
-![image](https://user-images.githubusercontent.com/93970330/163698842-ab9d2fbe-0d11-4aa5-af95-9436d6c02b4f.png)
+![image](https://user-images.githubusercontent.com/93970330/163705855-a62bf2d6-9c88-4810-9202-67d47dbc1128.png)
+
 
 <h2>2. Inheritance in Ruby</h2>
 
@@ -36,5 +37,6 @@ d) Member Methods inside Class
 ![image](https://user-images.githubusercontent.com/93970330/163701738-1a573676-00c7-428f-b9ed-dfab486c6bf5.png)
 
 <h2>Resources</h2>
+
 - Ruby Class and Object: https://www.tutorialspoint.com/ruby/ruby_classes.htm
 - Ruby Inheritance: https://www.geeksforgeeks.org/ruby-inheritance/
