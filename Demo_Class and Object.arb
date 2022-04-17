@@ -1,0 +1,47 @@
+# Parent class
+class Car
+    # Constructor of parent class
+    def initialize(name, color)
+        @car_name = name
+        @car_color = color
+        puts "A Car is created!"
+    end
+    # Methods of the parent class
+    def name
+        return @car_name
+    end
+    def color
+        return @car_color
+    end
+end
+ 
+# Child class
+class Ferrari < Car
+ 
+    # constructor of child class
+    def initialize(name, color)
+        @car_name = name
+        @car_color = color
+        puts "A Ferrari is created!"
+    end
+
+end
+ 
+car1 = Car.new("Ferrari", "Red") # A Car is created!
+car2 = Car.new("Lamborghini", "Gold") # A Car is created!
+car3 = Ferrari.new("Mark 1", "Red Berries") # A Ferrari is created!
+puts car1.name, car2.name, car3.name + " " + car3.color
+
+# Class with Method Overloading
+class Adder
+    def self.add(a, b)
+        return a+b   
+    end
+    def self.add(a, b, c)
+        return a+b+c
+    end
+end
+
+# puts Adder.add(1,2) # in `add': wrong number of arguments 
+                        #(given 2, expected 3) (ArgumentError)
+puts Adder.add(1,2,3) # 6
