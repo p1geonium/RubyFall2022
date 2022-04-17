@@ -1,5 +1,7 @@
 <h1>Objects and Classes</h1>
 
+The demo code file is in the same repo with this file: https://github.com/p1geonium/RubySpring2022
+
 <h2>1. Class in Ruby</h2>
 
 a) Defining Class
@@ -34,9 +36,17 @@ d) Member Methods inside Class
 
 - Ruby supports only single class inheritance, it does not support multiple class inheritance but it supports ***mixins***. The ***mixins*** are designed to implement multiple inheritances in Ruby, but it only inherits the interface part.
 
-![image](https://user-images.githubusercontent.com/93970330/163701738-1a573676-00c7-428f-b9ed-dfab486c6bf5.png)
+![image](https://user-images.githubusercontent.com/93970330/163706427-bd144ebf-1dd8-4a0f-9800-349af2b00edb.png)
+
+<h2>3. Overloading method in Ruby</h2>
+
+- Ruby *does not* support overloading method. 
+- If there are two methods with identical name, the first one will be ignored. Every attempts to call the first method will throw an error. The program will be executed normally if only the second method is called.
+
+![image](https://user-images.githubusercontent.com/93970330/163706463-7ded9421-aa35-480f-9b48-126204a2de21.png)
 
 <h2>Resources</h2>
 
 - Ruby Class and Object: https://www.tutorialspoint.com/ruby/ruby_classes.htm
 - Ruby Inheritance: https://www.geeksforgeeks.org/ruby-inheritance/
+- Method Overloading in Ruby: https://www.geeksforgeeks.org/method-overloading-in-ruby/
