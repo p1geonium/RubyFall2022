@@ -1,0 +1,170 @@
+require 'ruby2d'
+
+# Setting up the interface of the game
+set title: "RubyAim", resizable: true, width: 1540, height: 805
+
+# Declaring global variables
+state = false
+rad = 0
+total_point = 0
+point = 0
+hit = 0
+accuracy_display = nil
+target = nil
+escape_button = nil
+start_time = Time.now
+inital_time = Time.now
+reload = Sound.new('Target.mp3')
+start_sound = Sound.new('GameStart.mp3')
+end_sound = Sound.new("GameEnd.mp3")
+reload.volume = 20
+start_sound.volume = 20
+end_sound.volume = 20
+
+# Defining the main functions
+
+# Functions that generates UI objects of the menu scene, including the buttons 
+# to choose the level of difficulty and their name.
+def menu()
+  set background: Image.new('Menu.png', width: 1540, height: 805)
+  level_easy = Rectangle.new(x: 450, y: 400, color: 'green', width: 100, height: 100, z: 20)
+  level_normal = Rectangle.new( x: 730, y: 400,width: 100, height: 100,
+    color: 'blue',z: 20)
+  level_hard = Rectangle.new(x: 1000, y: 400,width: 100, height: 100,
+    color: 'red',z: 20)
+  easy_desc = Text.new("Easy", x: 465, y: 500, size: 32)
+  normal_desc = Text.new("Normal", x: 728, y: 500, size: 32)
+  hard_desc = Text.new("Hard", x: 1015, y: 500, size: 32)
+  return level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc
+end
+
+# Funtion that generates a target, a circle, with given radius at random 
+# position on the screen.
+def create_target(rad)
+  target = Circle.new(x: rand(100..(1540-100)), y: rand(100..(805-100)),
+            radius: rad,
+            color: 'red')
+  return target
+end
+
+# Function that removes the UI objects of menu scene and assign control value to 
+# variables to start the game.
+def start_game(rad, total_point, welcome_message, level_easy, level_normal, level_hard, 
+    easy_desc, normal_desc, hard_desc)
+  welcome_message.remove
+  level_easy.remove
+  level_normal.remove
+  level_hard.remove
+  easy_desc.remove
+  normal_desc.remove
+  hard_desc.remove
+  return rad, true, total_point, Time.now, Time.now
+end
+
+# Function that updates the accuracy rate and most recent reaction time of the 
+# player and display them to the screen.
+def score_calculate(hit, point, total_point, reaction_time)
+  if point == 0
+    score_display = Text.new("Accuracy: 0%, 0/0/" + total_point.to_s + ". Reaction time: 0s.", x: 200, y: 20, size: 32)
+  else
+    score_display = Text.new("Accuracy: " + (hit*100/point).to_s + "%, " + hit.to_s + "/" + point.to_s + "/" + total_point.to_s + ". Reaction time:" + reaction_time.round(3).to_s + "s.", x: 200, y: 20, size: 32)
+  end
+  return score_display
+end
+
+# Set up the menu UI
+level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc = menu()
+welcome_message = Text.new("Welcome to RubyAim! Happy training, agent!!!", 
+                            x: 300, y: 250, size: 48)
+
+# Mouse event handler 
+on :mouse_down do |event|
+  # Handle if the player clicks at the target or not once the game has started
+  if state
+    if target.contains?(event.x, event.y)
+      target.remove
+      accuracy_display.remove
+      reload.play
+      hit = hit + 1
+      point = point + 1
+      reaction_time = Time.now - inital_time
+      accuracy_display = score_calculate hit, point, total_point, reaction_time
+      if point < total_point
+        inital_time = Time.now
+        target = create_target rad
+      else
+        end_sound.play
+        state = false
+        accuracy_display.remove
+        escape_button.remove
+        level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc = menu()
+        welcome_message = Text.new("Accuracy: " + (hit*100/point).to_s + "%, " + hit.to_s + "/" + point.to_s + ". Training time:" + (Time.now-start_time).round().to_s + " seconds.", 
+        x: 250, y: 250, size: 48)
+        hit = 0
+        point = 0
+      end
+    elsif escape_button.contains?(event.x, event.y)
+      end_sound.play
+      state = false
+      accuracy_display.remove
+      escape_button.remove
+      level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc = menu()
+      if point == 0
+        score_display = Text.new("Accuracy: 0%, 0/0/" + total_point.to_s + ". Reaction time: 0s.", x: 200, y: 20, size: 32)
+        welcome_message = Text.new("Accuracy: 0%, 0/0. Training time:" + (Time.now-start_time).round().to_s + " seconds.", 
+        x: 250, y: 250, size: 48)
+      else
+        welcome_message = Text.new("Accuracy: " + (hit*100/point).to_s + "%, " + hit.to_s + "/" + point.to_s + ". Training time:" + (Time.now-start_time).round().to_s + " seconds.", 
+        x: 250, y: 250, size: 48)
+      end
+      hit = 0
+      point = 0
+    else
+      target.remove
+      accuracy_display.remove
+      point = point + 1
+      reaction_time = 0
+      accuracy_display = score_calculate hit, point, total_point, reaction_time
+      if point < total_point
+        inital_time = Time.now
+        target = create_target rad
+      else
+        end_sound.play
+        state = false
+        accuracy_display.remove
+        escape_button.remove
+        level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc = menu()
+        welcome_message = Text.new("Accuracy: " + (hit*100/point).to_s + "%, " + hit.to_s + "/" + point.to_s + "/" + total_point.to_s + ". Training time:" + (Time.now-start_time).round().to_s + " seconds.", 
+          x: 250, y: 250, size: 48)
+        hit = 0
+        point = 0
+      end
+    end
+
+  # Handle the difficulty choice of the player in the menu UI
+  else
+    if level_easy.contains?(event.x, event.y)
+      start_sound.play
+      rad, state, total_point, start_time, inital_time = start_game 20, 100, welcome_message, level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc
+      set background: Image.new('Easy.png', width: 1540, height: 805)
+      escape_button = Circle.new(x: 1400, y: 40, radius: 20, color: 'green')
+      accuracy_display = score_calculate hit, point, total_point, 0
+      target = create_target rad
+   elsif level_normal.contains?(event.x, event.y)
+      start_sound.play
+      rad, state, total_point, start_time, inital_time = start_game 15, 150, welcome_message, level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc
+      set background: Image.new('Normal.jpg', width: 1540, height: 805)
+      escape_button = Circle.new(x: 1400, y: 40, radius: 20, color: 'green')
+      accuracy_display = score_calculate hit, point, total_point, 0
+      target = create_target rad
+   elsif level_hard.contains?(event.x, event.y)
+      start_sound.play
+      rad, state, total_point, start_time, inital_time = start_game 10, 200, welcome_message, level_easy, level_normal, level_hard, easy_desc, normal_desc, hard_desc 
+      set background: Image.new('Hard.jpg', width: 1540, height: 805)
+      escape_button = Circle.new(x: 1400, y: 40, radius: 20, color: 'green')
+      accuracy_display = score_calculate hit, point, total_point, 0
+      target = create_target rad
+   end
+  end
+end
+show
